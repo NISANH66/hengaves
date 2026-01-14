@@ -1,0 +1,180 @@
+:root {
+    --primary: #0b5cff;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray: #64748b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6
+}
+
+header {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url('ceiling1.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 40px
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 2px
+}
+
+header p {
+    font-size: 1.3rem;
+    margin: 20px 0
+}
+
+.cta {
+    background: var(--primary);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+nav a {
+    position: relative;
+    /* הכרחי ל-::after */
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+section {
+    padding: 90px 8%
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px
+}
+
+.section-title h2 {
+    font-size: 2.6rem
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px
+}
+
+.project {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+    transition: .3s
+}
+
+.project:hover {
+    transform: translateY(-8px)
+}
+
+.project img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover
+}
+
+.project div {
+    padding: 25px
+}
+
+.project h3 {
+    margin-bottom: 10px
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center
+}
+
+.about img {
+    width: 100%;
+    border-radius: 30px
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .1)
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--dark);
+    color: #fff
+}
+
+@media(max-width:900px) {
+    .about {
+        grid-template-columns: 1fr
+    }
+}
